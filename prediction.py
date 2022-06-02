@@ -70,7 +70,7 @@ def validate_on_data(model: Model,
             # If future prediction
             if model.future_prediction != 0:
                 # Cut to only the first frame prediction + add the counter
-                train_output = torch.cat((train_output[:, :, :train_output.shape[2] // (model.future_prediction)], train_output[:, :, -1:]),dim=2)
+                # train_output = torch.cat((train_output[:, :, :train_output.shape[2] // (model.future_prediction)], train_output[:, :, -1:]),dim=2)
                 # Cut to only the first frame prediction + add the counter
                 targets = torch.cat((targets[:, :, :targets.shape[2] // (model.future_prediction)], targets[:, :, -1:]),dim=2)
 
